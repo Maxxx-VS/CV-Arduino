@@ -33,12 +33,12 @@ while True:
 
                 # красим кончики пальцев в красный
                 if id == 8:
-                    cv2.circle(img, (widht, height), 15, (0, 0, 255), cv2.FILLED)
+                    cv2.circle(img, (widht, height), 7, (200, 0, 255), cv2.FILLED)
                 if id == 4:
-                    cv2.circle(img, (widht, height), 15, (0, 0, 255), cv2.FILLED)
+                    cv2.circle(img, (widht, height), 7, (200, 0, 255), cv2.FILLED)
 
             # условие соприкосновения пальцев (место для полета фантазии)
-            if distance(p[8], p[4]) <= 3:
+            if distance(p[8], p[4]) <= 20:
                 print("Касание!")
 
     # отображаем видеопоток
