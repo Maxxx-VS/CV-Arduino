@@ -12,7 +12,7 @@ def send_command(command):
     ser.write(bytes(command + '\n', 'utf-8'))
 
 while True:
-    command = input("Введите команду ('on' или 'off'): ")
+    # command = input("Введите команду ('on' или 'off'): ")
 
     if command == 'on':
         print("Включаем светодиод")
@@ -25,4 +25,3 @@ while True:
 
     sleep(1)  # Небольшая пауза между командами
 
-send_command(on)
