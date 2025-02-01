@@ -2,7 +2,6 @@ import mediapipe as mp
 import cv2
 
 
-
 camera = cv2.VideoCapture(0)
 
 mpHands = mp.solutions.hands

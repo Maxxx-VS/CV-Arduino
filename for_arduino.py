@@ -11,7 +11,6 @@ sleep(2)  # Ждем пару секунд, чтобы плата успела �
 def send_command(command):
     ser.write(bytes(command + '\n', 'utf-8'))
 
-
 while True:
     command = input("Введите команду ('on' или 'off'): ")
 
