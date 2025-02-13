@@ -25,14 +25,6 @@ def send_command(command):
     ser.write(bytes(command + '\n', 'utf-8'))
 
 while True:
-    # условие соприкосновения пальцев (место для полета фантазии)
-    if distance(p[8], p[4]) < 10:
-        send_command('H')
-        print("H")
-
-    elif distance(p[8], p[4]) > 50:
-        send_command('L')
-        print("L")
 
     good, img = camera.read()
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -56,7 +48,14 @@ while True:
                 if id == 4:
                     cv2.circle(img, (widht, height), 7, (200, 0, 255), cv2.FILLED)
 
+    # условие соприкосновения пальцев (место для полета фантазии)
+    if distance(p[8], p[4]) < 10:
+        send_command('H')
+        print("H")
 
+    elif distance(p[8], p[4]) > 50:
+        send_command('L')
+        print("L")
 
     # отображаем видеопоток
     cv2.imshow('video', img)

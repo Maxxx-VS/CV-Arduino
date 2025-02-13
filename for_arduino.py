@@ -1,5 +1,4 @@
 # '/dev/ttyUSB0'
-
 import serial
 from time import sleep
 
@@ -13,15 +12,19 @@ def send_command(command):
 
 while True:
     # command = input("Введите команду ('on' или 'off'): ")
+    list = ["on", 'off']
+    for i in range (len(list)):
+        command = list[i]
 
-    if command == 'on':
-        print("Включаем светодиод")
-        send_command('H')
-    elif command == 'off':
-        print("Выключаем светодиод")
-        send_command('L')
-    else:
-        print("Неизвестная команда")
+        if command == 'off':
+            print("Отпустить груз")
+            send_command('H')
+        elif command == 'on':
+            print("Взять груз")
+            send_command('L')
+        else:
+            print("Неизвестная команда")
 
-    sleep(1)  # Небольшая пауза между командами
+        sleep(5)  # Небольшая пауза между командами
+
 
